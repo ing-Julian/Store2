@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from appStoreV2.views.productView import ProductAPIView
+from appStoreV2.views.clientView import client_api_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('producto/', include('appStoreV2.views.urls'))
-    path('producto/', ProductAPIView.as_view())
+    path('producto/', ProductAPIView.as_view()),
+    path('client/', client_api_view)
 ]
